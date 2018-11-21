@@ -183,8 +183,8 @@
 
     var presenceCallback = function(status, response){
          if ((response.channels["pongnub" + rand]) && (response.channels["pongnub" + rand].occupancy > 0)){
-           if ($("#game").attr('src') !== ("game.html?id=" + rand)){
-            $("#game").attr("src", "game.html?id=" + rand);
+           if ($("#game").attr('src') !== ("mao.html?id=" + rand)){
+            $("#game").attr("src", "mao.html?id=" + rand);
            }
          }
       };
