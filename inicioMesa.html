@@ -7,7 +7,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="google-site-verification" content="X-NyWbTQ-1CgZ7cvLZYPOc0BzO7PblJv201J3PJXAJI">
+   
+  // load the server side multi lib
+  var multiModule = require('./multi/server');
 
+  // create a new server listening to port 8080
+  // this will be used for socket connections
+  // you could also use express to create the server
+  var server = require('http').createServer().listen(8080);
+
+  // get a Multi instance by passing your server
+  var multi = multiModule.init(server);
+
+  // log every newly created session
+  multi.on('sessionCreated', function (event) {
+    console.log('new session created!', event.session.token);
+  });
 
   <title>Drink N Play</title>
 
