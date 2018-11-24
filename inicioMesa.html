@@ -161,7 +161,22 @@
 
 
   <script>
+      // load the server side multi lib
+      var multiModule = require('./multi/server');
 
+      // create a new server listening to port 8080
+      // this will be used for socket connections
+      // you could also use express to create the server
+      var server = require('http').createServer().listen(8080);
+
+      // get a Multi instance by passing your server
+      var multi = multiModule.init(server);
+
+      // log every newly created session
+      multi.on('sessionCreated', function (event) {
+        console.log('new session created!', event.session.token);
+      });
+    
     var makeQRCode = function(props){
        var gameQRCode = qrcode(4,'L');
        var targ = props.text.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
