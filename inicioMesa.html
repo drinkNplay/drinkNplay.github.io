@@ -34,8 +34,7 @@
 
 <body id="app" class="satemplate" data-ember-extension="1">
 <!-- Google Tag Manager -->
-
-
+  
   <div id="alert_container" class="alert  hidden"></div>
   <style media="screen">
     a[name=tutorial]:before {
@@ -141,11 +140,6 @@
                   <script src="./js/prefixfree.min.js" type="text/javascript"></script>
                 </div>
               </div>
-
-
-            <iframe id="game" src="img/blank.png" width="640" height="480" scrolling="no" seamless="seamless" frameborder="0">
-                <p>Your browser does not support iframes.</p>
-              </iframe>
             </div>
       <div class="col-xs-2">&nbsp;</div>
     </div>
@@ -153,14 +147,12 @@
 
   <a name="tutorial"></a>
 
-
   <script src="./dist/jquery.min.js"></script>
   <script src="./pubnub/dist/web/pubnub.min.js"></script>
   <script src="./assets/main.js"></script>
   <script src="./qrcode-generator/js/qrcode.js"></script>
-
-
   <script>
+      <script>
       // load the server side multi lib
       var multiModule = require('./multi/server');
 
@@ -176,6 +168,8 @@
       multi.on('sessionCreated', function (event) {
         console.log('new session created!', event.session.token);
       });
+  </script>
+  <script>
     
     var makeQRCode = function(props){
        var gameQRCode = qrcode(4,'L');
@@ -239,10 +233,6 @@
       <h3 class="text-red">Loading...</h3>
     </div>
   </div>
-
-
-
-
 
 </body>
 
