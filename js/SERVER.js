@@ -6,6 +6,6 @@ sure to change 'module.exports' to a running, reachable multi server instance.
 
 define(function(require, exports, module) {
 
-	module.exports = 'localhost';
+	module.exports = 'drinknplay.github.io';
 
 });
