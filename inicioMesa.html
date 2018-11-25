@@ -181,9 +181,10 @@
           presenceCallback);
     }, 1000);
   $("#controlLink").attr("href", "mesa.html?id=" + rand);
-   var controllerURL = window.location.protocol + "//"
+  var controllerURL = window.location.protocol + "//"
                        + window.location.hostname +"./"
-                       + "image#" + rand
+                       + "mao.html?id=" + rand
+  
   var props = { text: controllerURL,
                 width: 164,
                 height: 164,
