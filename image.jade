@@ -1,0 +1,25 @@
+doctype html
+html
+	head
+		title Shared Image
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name='mobile-web-app-capable', content='yes')
+
+		link(rel='stylesheet', href='/css/image.css')
+		script(src='/js/lib/jquery-2.0.0.min.js')
+		script(src='/js/lib/jquery.qrcode.min.js')
+		script(data-main='/js/image/index.js', src='/js/lib/require.js')
+
+
+
+	body
+
+		#error.section
+		#game.section
+			.line
+			.qr
+			a.join-url
+			img#image(src='/img/icons/star_bw.svg')
+			.players
+		#status loading
