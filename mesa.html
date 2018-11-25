@@ -40,7 +40,7 @@
                     </div>
                     <div class="row align-items-center" style="height: 70%; max-height: 70%">
                         <div class="row col-centered align-items-center" style="height: 100%; float: left; max-width: 20%">
-                            <div class="col-12">
+                            <!-- <div class="col-12">
                                 <div class="rotate270" style="margin: auto; float: left">
                                     <img src="./img/as_paus.png" style="width: 30px;">
                                 </div>
@@ -84,7 +84,13 @@
                                 <div class="rotate270" style="margin: auto; float: left">
                                     <img src="./img/as_paus.png" style="width: 30px;">
                                 </div>
-                            </div>
+                            </div>-->
+                            
+                            <script>deck.deal(5, [upperhand, lowerhand], 50, function() {
+		                    //This is a callback function, called when the dealing is done.
+		                    discardPile.addCard(deck.topCard());
+		                    discardPile.render();
+	                        });</script>                            
                         </div>
                     </div>
                     <div class="row align-items-center" style="height: 15%;">
