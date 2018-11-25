@@ -4,7 +4,6 @@ body {
 	border-radius:8px; 
 	box-shadow:black 0px 0px 2px; 
 	width: 600px; 
-	background:#FFF; 
 	margin:20px auto; 
 	border:solid 1px black; 
 	font-family: arial, sans-serif; 
@@ -24,9 +23,6 @@ button {
 	height:30px;
 	width:100px;
 	margin:8px auto;
-}
-img.preload {
-	display:none;
 }
 h1 {
 	font-size:60px;
