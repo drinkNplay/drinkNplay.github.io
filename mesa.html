@@ -1,51 +1,26 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.1/examples/cover/ -->
-<html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="./img/drinkNplay.png">
+<html>
+	<head>
+		<title>cards.js - Example</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="example.css"/>
+		<script src="jquery-1.7.min.js"></script>
+	</head>
+	<body>
+		<h1>Cards.js - Example</h1>
+	
+		<img class="preload" src="img/cards.png"/>
 
-        <title>DrinkNPlay</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="./bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-	<link rel="stylesheet" href="./example.css"/>
-	<script src="./jquery-1.7.min.js"></script>
-    </head>
-
-    <body class="text-center" style="height: 100%">
-        <div class="container-fluid" style="height: 100%">
-            <div class="row" style="height: 100%;">
-		<img class="preload" src="./img/cards.png"/>
 		<div id="card-table">
 			<button id="deal">DEAL</button>
-		</div>                     
-
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="./js/example.js"></script>
-		<script src="./js/cards.js"></script>
-		<script src="./bootstrap-4.0.0/assets/js/src/jquery.min.js"></script>
-		<script src="./bootstrap-4.0.0/assets/js/src/popper.min.js"></script>
-		<script src="./bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-		    var fim = "";
-		    $(function() {
-		       $(window).keypress(function(e) {
-			   fim = fim + e.key;
-			   if (fim === "fim") {
-			       window.location.replace("./fim_mesa.html")
-			   }
-		       });
-		    });
-		</script>
-	   </div>
-        </div>
-    </body>
+		</div>
+		<footer>
+			cards.js was created by <a href="http://einaregilsson.com">Einar Egilsson</a> and is licensed
+			under the MIT license. The card images were created by <a href="http://nicubunu.ro">Nicu Buculei</a> and are 
+			in the public domain. 
+		</footer>
+		<!-- load this at the bottom so the #card-table element exists -->
+		<script src="cards.js"></script>
+		<script src="example.js"></script>
+	</body>
 </html>
