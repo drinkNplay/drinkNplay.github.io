@@ -86,11 +86,21 @@
                                 </div>
                             </div>-->
                             
-                            <script>deck.deal(5, [upperhand, lowerhand], 50, function() {
+                            <script>
+				    deck = new cards.Deck(); 
+			            //By default it's in the middle of the container, put it slightly to the side
+				    deck.x -= 50;
+
+				    //cards.all contains all cards, put them all in the deck
+				    deck.addCards(cards.all); 
+				    //No animation here, just get the deck onto the table.
+			            deck.render({immediate:true});
+
+				    deck.deal(5, [upperhand, lowerhand], 50, function() {
 		                    //This is a callback function, called when the dealing is done.
 		                    discardPile.addCard(deck.topCard());
-		                    discardPile.render();
-	                        });</script>                            
+		                    discardPile.render();});
+			    </script>                            
                         </div>
                     </div>
                     <div class="row align-items-center" style="height: 15%;">
