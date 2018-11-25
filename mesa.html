@@ -22,19 +22,15 @@
     <body class="text-center" style="height: 100%">
         <div class="container-fluid" style="height: 100%">
             <div class="row" style="height: 100%;">
-                <div class="col-6 col-sm-8 col-md-8 col-lg-8 col-xl-10" style="height: 100%;">
-                    <div class="row align-items-center" style="height: 70%; max-height: 70%">
-                        <div class="row col-centered align-items-center" style="height: 100%; float: left; max-width: 20%">
-			    <script src="./jquery-1.7.min.js"></script>
-		            <img class="preload" src="./img/cards.png"/>
-			    <div id="card-table">
-			      <button id="deal">DEAL</button>
-			    </div>
-                            <script>
-
-					//Tell the library which element to use for the table
-					cards.init({table:'#card-table'});
-
+                <script src="./jquery-1.7.min.js"></script>
+		<img class="preload" src="./img/cards.png"/>
+		<div id="card-table">
+			<button id="deal">DEAL</button>
+		</div>
+                  <script>
+                  			//Tell the library which element to use for the table
+		   			cards.init({table:'#card-table'});
+ 
 					//Create a new deck of cards
 					deck = new cards.Deck(); 
 					//By default it's in the middle of the container, put it slightly to the side
@@ -87,10 +83,8 @@
 							lowerhand.render();
 						}
 					});
-			    </script>                            
-                        </div>
-                    </div>
-                </div>
+					
+                  </script>                            
             </div>
         </div>
 
