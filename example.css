@@ -1,14 +1,7 @@
-
-body { 
-	position:relative;
-	border-radius:8px; 
-	box-shadow:black 0px 0px 2px; 
-	width: 600px; 
-	margin:20px auto; 
-	border:solid 1px black; 
-	font-family: arial, sans-serif; 
-	padding:50px;  
+html { 
+	background-color:#092E20; 
 }
+
 #buttons {
 	text-align:center;
 }
