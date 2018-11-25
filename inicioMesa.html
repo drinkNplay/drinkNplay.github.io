@@ -10,7 +10,11 @@
   <meta name="google-site-verification" content="X-NyWbTQ-1CgZ7cvLZYPOc0BzO7PblJv201J3PJXAJI">
   
   <title>Drink N Play</title>
-  
+
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.">
+  <meta name="viewport" content="width=device-width, target-densityDpi=device-dpi, initial-scale=1.0, maximum-scale=1.5">
+
+
   <script type="text/javascript" src="./assets/main.js"></script>
   <script type="text/javascript" src="./assets/pd.js"></script>
   <script type="text/javascript" async="" src="./assets/inpage_linkid.js" id="undefined"></script>
@@ -62,6 +66,7 @@
       margin: 20px auto;
       text-align: center;
     }
+
     #areana {
       top: 0px;
       position: relative;
@@ -69,6 +74,21 @@
     }
   </style>
   <!-- <div id="qrcode"></div> -->
+  <div class="section gray padding-extra" id="app-hero">
+    <div class="container">
+      <h1 class="text-center" style="font-family: 'Press Start 2P', cursive;">Drink N Play</h1>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3" style="margin-bottom: -40px;">
+          <p class="text-center">
+          Read the QR code below to play from your mobile device or open up another window to access the controls from your browser.
+          <h4 class="text-center"><a href="" id="controlLink">Iniciar Jogo</a></h4>
+          </p>
+          <div id="qrcode"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="section padding-extra white" id="demo" style="margin-top: -100px; min-height: 0px;">
      <div class="row">
@@ -102,11 +122,14 @@
                 <script src="js/pubgame.js" type="text/javascript"></script>
                 <script src="js/utils.js" type+"text/javascript"></script>
                 <script type="text/javascript">
+
                 $("#REMATCH").click(function() {window.location.reload()});
+
                   window.oldSchoolCool = true;
                   Game.ready(function() {
                         var pong = Game.start('game', Pong, {sound: false});
                   });
+
                   $("#game").show();
                   $(document).ready( function() {
                     setTimeout(function() {
@@ -132,12 +155,15 @@
       <script>
       // load the server side multi lib
       var multiModule = require('./multi/server');
+
       // create a new server listening to port 8080
       // this will be used for socket connections
       // you could also use express to create the server
       var server = require('http').createServer().listen(8080);
+
       // get a Multi instance by passing your server
       var multi = multiModule.init(server);
+
       // log every newly created session
       multi.on('sessionCreated', function (event) {
         console.log('new session created!', event.session.token);
@@ -153,11 +179,16 @@
        gameQRCode.make();
        return gameQRCode.createSvgTag();
     }
+
+
     var rand = Math.floor(Math.random()*10000);
+
     var pubnub = new PubNub({
       publishKey: 'pub-c-0ecaf3c4-bc3a-4e03-94e7-e85e196fdc4c',
       subscribeKey: 'sub-c-673a62aa-24c9-11e4-a77a-02ee2ddab7fe'
     });
+
+
     var presenceCallback = function(status, response){
          if ((response.channels["pongnub" + rand]) && (response.channels["pongnub" + rand].occupancy > 0)){
            if ($("#game").attr('src') !== ("mao.html?id=" + rand)){
@@ -165,6 +196,8 @@
            }
          }
       };
+
+
     var chan = "pongnub" + rand;
     var z = setInterval(function() {
         pubnub.hereNow({
@@ -173,19 +206,24 @@
           ,includeUUIDS: false},
           presenceCallback);
     }, 1000);
+
+
   $("#controlLink").attr("href", "mesa.html?id=" + rand);
-  var controllerURL = window.location.protocol + "//"
+
+   var controllerURL = window.location.protocol + "//"
                        + window.location.hostname +"./"
-                       + "mao.html?id=" + rand
-  
+                       + "image.html?id=" + rand
+
   var props = { text: controllerURL,
                 width: 164,
                 height: 164,
                 colorDark: "#444",
                 colorLight: "#ffffff"
               };
+
   var qrCode = document.getElementById('qrcode');
   qrCode.innerHTML = makeQRCode(props);
+
   </script>
 
   <div id="loading">
