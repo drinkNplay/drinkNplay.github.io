@@ -40,58 +40,23 @@
                     </div>
                     <div class="row align-items-center" style="height: 70%; max-height: 70%">
                         <div class="row col-centered align-items-center" style="height: 100%; float: left; max-width: 20%">
-                            <!-- <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rotate270" style="margin: auto; float: left">
-                                    <img src="./img/as_paus.png" style="width: 30px;">
-                                </div>
-                            </div>-->
 			    <script src="jquery-1.7.min.js"></script>
 		            <img class="preload" src="./img/cards.png"/>
                             <script>
+				    cards.init({table:'#card-table'});
 				    deck = new cards.Deck(); 
 			            //By default it's in the middle of the container, put it slightly to the side
 				    deck.x -= 50;
+                                    //cards.all contains all cards, put them all in the deck
+				    deck.addCards(cards.all); 
+			            //No animation here, just get the deck onto the table.
+				    deck.render({immediate:true});
 
+				    //Now lets create a couple of hands, one face down, one face up.
+			            upperhand = new cards.Hand({faceUp:false, y:60});
+				    lowerhand = new cards.Hand({faceUp:false, y:340});
+				    lefthand = new cards.Hand({faceUp:false,x:0, y:200});
+				    righthand = new cards.Hand({faceUp:false,x:200, y:200});
 				    //cards.all contains all cards, put them all in the deck
 				    deck.addCards(cards.all); 
 				    //No animation here, just get the deck onto the table.
