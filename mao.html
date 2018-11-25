@@ -77,6 +77,46 @@
                });
             });
         </script>
-    </body>
+        <script> 
+        // configure where multi can find your client side socket.io lib
+        // a running socket.io server will deliver it under 'socket.io/socket.io.js'
+        requirejs.config({
+        paths: {
+          'socket.io': 'http://mySocketioServer:8080/socket.io/socket.io.js'
+        }
+        });
+
+          // require the client side lib
+          // see module:client/multi
+          requirejs(['../lib/multi'], function (multiModule) {
+
+            // say multi where to find the running socket server
+            // via MultiOptions
+            var multiOptions = {
+              server: 'http://mySocketioServer:8080/'
+            };
+
+            // init multi with your options 
+            // a Multi instance will be returned
+            var multi = multiModule.init(multiOptions);
+
+            // create a new session with success and error callback
+            // see: Multi.createSession
+            multi.createSession().then(onSession, onSessionFailed).done();
+
+            // receive the Session instance
+            function onSession(session) {
+              // token you can use to join a session
+              console.log(session.token);
+            }
+
+            // receive an module:shared/errors.MultiError
+            // all error types can be found inside the multiModule
+            function onSessionFailed(error) {
+              console.error(error);
+            }
+          };
+  </script>
+  </body>
 
 </html>
