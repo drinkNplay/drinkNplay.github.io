@@ -25,7 +25,7 @@ discardPile.x += 100;
 $('#deal').click(function() {
 	//Deck has a built in method to deal to hands.
 	$('#deal').hide();
-	deck.deal(4, [upperhand, lowerhand], 50, function() {
+	deck.deal(4, [upperhand], 50, function() {
 		//This is a callback function, called when the dealing
 		//is done.
 		discardPile.addCard(deck.topCard());
