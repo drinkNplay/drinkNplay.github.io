@@ -16,16 +16,21 @@
         <!-- Custom styles for this template -->
         <link href="./bootstrap-4.0.0/assets/css/project.css" rel="stylesheet">
         <link href="./font/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="example.css"/>
+		<script src="jquery-1.7.min.js"></script>
         
     </head>
 
     <body class="text-center">
         <div class="container-fluid" style="height: 100%">
             <div class="row" style="height: 100%;">
-                
+                <img class="preload" src="img/cards.png"/>
+		        <div id="card-table">
+		        </div>
+		<!-- load this at the bottom so the #card-table element exists -->
             </div>
         </div>
-
 
         <!-- Bootstrap core JavaScript
         ================================================== -->
@@ -33,6 +38,8 @@
         <script src="./bootstrap-4.0.0/assets/js/src/jquery.min.js"></script>
         <script src="./bootstrap-4.0.0/assets/js/src/popper.min.js"></script>
         <script src="./bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+        <script src="./js/cards.js"></script>
+		<script src="./js/exemplo2.js"></script>
         <script type="text/javascript">
             var fim = "";
             $(function() {
