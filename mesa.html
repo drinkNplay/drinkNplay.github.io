@@ -14,8 +14,6 @@
         <link href="./bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="./bootstrap-4.0.0/assets/css/project.css" rel="stylesheet">
-        <link href="./font/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="./example.css"/>
 	<script src="./jquery-1.7.min.js"></script>
     </head>
@@ -26,28 +24,28 @@
 		<img class="preload" src="./img/cards.png"/>
 		<div id="card-table">
 			<button id="deal">DEAL</button>
-		</div>                      
-            </div>
-        </div>
+		</div>                     
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-	<script src="./js/example.js"></script>
-	<script src="./js/cards.js"></script>
-        <script src="./bootstrap-4.0.0/assets/js/src/jquery.min.js"></script>
-        <script src="./bootstrap-4.0.0/assets/js/src/popper.min.js"></script>
-        <script src="./bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            var fim = "";
-            $(function() {
-               $(window).keypress(function(e) {
-                   fim = fim + e.key;
-                   if (fim === "fim") {
-                       window.location.replace("./fim_mesa.html")
-                   }
-               });
-            });
-        </script>
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="./js/example.js"></script>
+		<script src="./js/cards.js"></script>
+		<script src="./bootstrap-4.0.0/assets/js/src/jquery.min.js"></script>
+		<script src="./bootstrap-4.0.0/assets/js/src/popper.min.js"></script>
+		<script src="./bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		    var fim = "";
+		    $(function() {
+		       $(window).keypress(function(e) {
+			   fim = fim + e.key;
+			   if (fim === "fim") {
+			       window.location.replace("./fim_mesa.html")
+			   }
+		       });
+		    });
+		</script>
+	   </div>
+        </div>
     </body>
 </html>
