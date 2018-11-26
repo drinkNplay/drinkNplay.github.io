@@ -1,3 +1,4 @@
+
 cards.init({table:'#card-table'});
 
 //Create a new deck of cards
