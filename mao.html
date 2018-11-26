@@ -1,96 +1,15 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.1/examples/cover/ -->
-<html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="https://getbootstrap.com/favicon.ico">
-
-        <title>DrinkNPlay</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="./bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="./bootstrap-4.0.0/assets/css/project.css" rel="stylesheet">
-        <link href="./font/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
-
-		<link rel="stylesheet" href="example.css"/>
-		<script src="jquery-1.7.min.js"></script>
-        
-    </head>
-
-    <body class="text-center">
-        <div class="container-fluid" style="height: 100%">
-            <div class="row" style="height: 100%;">
-                <img class="preload" src="img/cards.png"/>
-		        <div id="card-table">
-		        </div>
-		<!-- load this at the bottom so the #card-table element exists -->
-            </div>
-        </div>
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="./bootstrap-4.0.0/assets/js/src/jquery.min.js"></script>
-        <script src="./bootstrap-4.0.0/assets/js/src/popper.min.js"></script>
-        <script src="./bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
-        <script src="./js/cards.js"></script>
-		<script src="./js/exemplo2.js"></script>
-        <script type="text/javascript">
-            var fim = "";
-            $(function() {
-               $(window).keypress(function(e) {
-                   fim = fim + e.key;
-                   if (fim === "fim") {
-                       window.location.replace("./index.html")
-                   }
-               });
-            });
-        </script>
-        <script> 
-        // configure where multi can find your client side socket.io lib
-        // a running socket.io server will deliver it under 'socket.io/socket.io.js'
-        requirejs.config({
-        paths: {
-          'socket.io': 'http://mySocketioServer:8080/socket.io/socket.io.js'
-        }
-        });
-
-          // require the client side lib
-          // see module:client/multi
-          requirejs(['../lib/multi'], function (multiModule) {
-
-            // say multi where to find the running socket server
-            // via MultiOptions
-            var multiOptions = {
-              server: 'http://mySocketioServer:8080/'
-            };
-
-            // init multi with your options 
-            // a Multi instance will be returned
-            var multi = multiModule.init(multiOptions);
-
-            // create a new session with success and error callback
-            // see: Multi.createSession
-            multi.createSession().then(onSession, onSessionFailed).done();
-
-            // receive the Session instance
-            function onSession(session) {
-              // token you can use to join a session
-              console.log(session.token);
-            }
-
-            // receive an module:shared/errors.MultiError
-            // all error types can be found inside the multiModule
-            function onSessionFailed(error) {
-              console.error(error);
-            }
-          };
-  </script>
-  </body>
-
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="example.css"/>
+    <script src="jquery-1.7.min.js"></script>
+    <link rel="icon" href="./img/drinkNplay.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="card-table"></div>
+    <script src="js/cards.js"></script>
+    <script src="js/exemplo2.js"></script>
+</body>
 </html>
