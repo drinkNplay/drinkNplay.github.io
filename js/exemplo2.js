@@ -12,15 +12,7 @@ deck.render({immediate:true});
 
 lowerhand = new cards.Hand({faceUp:true, y:340});
 
-//Lets add a discard pile
-discardPile = new cards.Deck({faceUp:true});
-discardPile.x += 250;
-
 deck.deal(4, [lowerhand], 50, function() {
-	//This is a callback function, called when the dealing
-	//is done.
-	discardPile.addCard(deck.topCard());
-	discardPile.render();
 });
 
 
