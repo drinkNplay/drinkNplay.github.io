@@ -13,7 +13,6 @@ deck.render({immediate:true});
 
 //Now lets create a couple of hands, one face down, one face up.
 upperhand = new cards.Hand({faceUp:true, y:160});
-lowerhand = new cards.Hand({faceUp:true, y:340});
 
 //Lets add a discard pile
 discardPile = new cards.Deck({faceUp:true});
@@ -25,12 +24,6 @@ $('#deal').click(function() {
 	//Deck has a built in method to deal to hands.
 	$('#deal').hide();
 	deck.deal(6, [upperhand], 50, function() {
-		//This is a callback function, called when the dealing
-		//is done.
-		discardPile.addCard(deck.topCard());
-		discardPile.render();
-	});
-	deck.deal(4, [lowerhand], 50, function() {
 		//This is a callback function, called when the dealing
 		//is done.
 		discardPile.addCard(deck.topCard());
@@ -59,17 +52,3 @@ upperhand.click(function(card){
 		lowerhand.render();
 	}
 });
-
-lowerhand.click(function(card){
-	if (card.suit == discardPile.topCard().suit 
-		|| card.rank == discardPile.topCard().rank) {
-		discardPile.addCard(card);
-		discardPile.render();
-		lowerhand.render();
-	}
-});
-
-
-//So, that should give you some idea about how to render a card game.
-//Now you just need to write some logic around who can play when etc...
-//Good luck :)
