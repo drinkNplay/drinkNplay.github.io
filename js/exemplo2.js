@@ -1,5 +1,6 @@
-
 cards.init({table:'#card-table'});
+
+window.location = 'mesa.html?message=somemessage';
 
 //Create a new deck of cards
 deck = new cards.Deck(); 
