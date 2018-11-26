@@ -1,7 +1,5 @@
 cards.init({table:'#card-table'});
 
-window.location = 'mesa.html?message=somemessage';
-
 //Create a new deck of cards
 deck = new cards.Deck(); 
 //By default it's in the middle of the container, put it slightly to the side
