@@ -1,23 +1,12 @@
 //Tell the library which element to use for the table
 cards.init({table:'#card-table'});
 
-var popup = window.open(...popup details...);
+function testJS() {
+    var b = document.getElementById('name').value,
+        url = 'https://drinknplay.github.io/mesa.html?name=' + encodeURIComponent(b);
 
-// This will successfully queue a message to be sent to the popup, assuming
-// the window hasn't changed its location.
-popup.postMessage("hello there!", "https://drinknplay.github.io/mesa.html");
-
-function receiveMessage(event)
-{
-  // Do we trust the sender of this message?  (might be
-  // different from what we originally opened, for example).
-  if (event.origin !== "https://drinknplay.github.io/mesa.html")
-    return;
-
-  // event.source is popup
-  // event.data is "hi there yourself!  the secret response is: rheeeeet!"
+    document.location.href = url;
 }
-window.addEventListener("message", receiveMessage, false);
 
 //Create a new deck of cards
 deck = new cards.Deck(); 
